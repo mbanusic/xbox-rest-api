@@ -1,5 +1,5 @@
 <?php
 
-use VendorName\Skeleton\Tests\TestCase;
+use Neznam\XboxRestApi\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
