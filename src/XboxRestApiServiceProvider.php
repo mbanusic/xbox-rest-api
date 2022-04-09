@@ -18,8 +18,6 @@ class XboxRestApiServiceProvider extends PackageServiceProvider
         $package
             ->name('xbox-rest-api')
             ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_xbox-rest-api_table')
             ->hasCommand(XboxRestApiCommand::class);
     }
 }
