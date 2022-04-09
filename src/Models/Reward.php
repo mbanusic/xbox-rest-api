@@ -2,8 +2,8 @@
 
 namespace Neznam\XboxRestApi\Models;
 
-class Reward extends AbstractModel {
-
+class Reward extends AbstractModel
+{
     public $name;
 
     public $description;

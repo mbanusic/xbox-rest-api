@@ -42,11 +42,12 @@ class Achievement extends AbstractModel
 
     public $isRevoked;
 
-    public function map($attributes) {
+    public function map($attributes)
+    {
         $fields = [
             'id', 'serviceConfigId', 'name', 'profressState', 'platform', 'isSecret', 'description',
             'lockedDescription', 'productId', 'achievementType', 'participationType', 'estimatedTime',
-            'deeplink', 'isRevoked'
+            'deeplink', 'isRevoked',
         ];
         foreach ($fields as $field) {
             $this->{$field} = $attributes[$field];
@@ -59,7 +60,7 @@ class Achievement extends AbstractModel
             $this->mediaAssets[] = (new MediaAsset())->map($asset);
         }
 
-        foreach($attributes['titleAssociations'] as $association) {
+        foreach ($attributes['titleAssociations'] as $association) {
             $this->titleAssociations[] = (new TitleAssociation())->map($association);
         }
     }

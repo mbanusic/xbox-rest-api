@@ -2,8 +2,8 @@
 
 namespace Neznam\XboxRestApi\Models;
 
-class Profile extends AbstractModel {
-
+class Profile extends AbstractModel
+{
     protected int $id;
 
     protected int $hostId;

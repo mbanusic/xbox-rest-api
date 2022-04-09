@@ -16,7 +16,8 @@ abstract class AbstractXboxRequest
 
     protected $httpClient;
 
-    public function __construct($contract_version = 2, $guzzle = []) {
+    public function __construct($contract_version = 2, $guzzle = [])
+    {
         $provider = app(config('xbox-rest-api.provider'));
 
         $this->uhs = $provider->getUhs();
@@ -25,13 +26,14 @@ abstract class AbstractXboxRequest
         $this->guzzle = $guzzle;
     }
 
-    protected function getHttpClient() {
+    protected function getHttpClient()
+    {
         if (is_null($this->httpClient)) {
             $params = [
                 'header' => [
                     'Authorization' => $this->getAuthorization(),
-                    'x-xbl-contract-version' => $this->contract_version
-                ]
+                    'x-xbl-contract-version' => $this->contract_version,
+                ],
             ];
             $params = array_merge($this->guzzle, $params);
             $this->httpClient = new Client($params);
@@ -40,7 +42,8 @@ abstract class AbstractXboxRequest
         return $this->httpClient;
     }
 
-    public function getAuthorization() {
+    public function getAuthorization()
+    {
         return 'XBL3.0 x=' . $this->uhs.';'.$this->token;
     }
 }

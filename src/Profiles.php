@@ -19,16 +19,17 @@ class Profiles extends AbstractXboxRequest
         'TenureLevel',
     ];
 
-    public function getProfiles(array $ids) {
+    public function getProfiles(array $ids)
+    {
         $r = $this->getHttpClient()->post($this->url . '/users/batch/profile/settings', [
            'headers' => [
                'Authorization' => $this->getAuthorization(),
-               'x-xbl-contract-version' => 2
+               'x-xbl-contract-version' => 2,
            ],
             'json' => [
                 'userIds' => $ids,
-                'settings' => $this->settings
-            ]
+                'settings' => $this->settings,
+            ],
         ]);
         $response = json_decode($r->getBody()->getContents(), true);
 
@@ -39,15 +40,16 @@ class Profiles extends AbstractXboxRequest
         dd($p);
     }
 
-    public function getFriends(int $id) {
-        $r = $this->getHttpClient()->get($this->url . '/users/xuid('.$id.')/profile/settings/people/people',[
+    public function getFriends(int $id)
+    {
+        $r = $this->getHttpClient()->get($this->url . '/users/xuid('.$id.')/profile/settings/people/people', [
             'headers' => [
                 'Authorization' => $this->getAuthorization(),
-                'x-xbl-contract-version' => 2
+                'x-xbl-contract-version' => 2,
             ],
             'query' => [
-                'settings' => implode(',', $this->settings)
-            ]
+                'settings' => implode(',', $this->settings),
+            ],
         ]);
 
         $response = json_decode($r->getBody()->getContents(), true);
