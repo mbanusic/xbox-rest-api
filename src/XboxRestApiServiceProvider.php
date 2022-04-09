@@ -2,9 +2,9 @@
 
 namespace Neznam\XboxRestApi;
 
+use Neznam\XboxRestApi\Commands\XboxRestApiCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Neznam\XboxRestApi\Commands\XboxRestApiCommand;
 
 class XboxRestApiServiceProvider extends PackageServiceProvider
 {

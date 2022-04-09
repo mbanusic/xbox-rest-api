@@ -3,8 +3,8 @@
 namespace Neznam\XboxRestApi\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Neznam\XboxRestApi\XboxRestApiServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
